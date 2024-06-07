@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languages App</title>
+    <style>
+        *{ font-size: 30px; font-family: 'Poppins';}
+        body{background-color: #ffe9f3;}
+        ::placeholder{color: rgb(255, 129, 167);}
+        input[type="checkbox"]{accent-color: rgb(255, 0, 157);}
+        h1{color: rgb(255, 57, 156);text-shadow: 2px 2px 2px black;}
+        input{outline: none ;border-radius: 10px;background-color: rgb(194, 0, 113);color: pink; text-shadow: 1px 1px 3px rgb(0, 111, 119);}
+        .btn{border: none;box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;text-shadow: none;}
+        .btn:hover{background-color: rgb(255, 0, 170);transition: 0.3s;box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(255, 0, 179, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;color: rgb(110, 0, 46);}
+        .btn:active{transition: 0.3s;transform: translateY(2px);box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px, rgba(255, 0, 179, 0.3) 0px 7px 13px 0px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;color: rgb(0, 0, 0);}
+        h2{color: rgb(255, 0, 170);text-shadow: 2px 2px 2px black;}
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Languages App</h1>
+        <form onsubmit="show()">
+            <input type="text" placeholder="Enter Your Name" id="name">
+            <br><br>
+            <input type="checkbox" id="js">JavaScript
+            <input type="checkbox" id="ja">Java
+            <input type="checkbox" id="py">Python
+            <br><br>
+            <input type="submit" class="btn">
+        </form>
+        <h2 id="msg"></h2>
+
+        <script>
+            function show(){
+                event.preventDefault();
+                let name = document.getElementById("name");
+                let js = document.getElementById("js");
+                let ja = document.getElementById("ja");
+                let py = document.getElementById("py");
+                let msg = document.getElementById("msg");
+
+                let choice = "";
+                if(js.checked)      choice += "JavaScript ";
+                if(ja.checked)      choice += "Java ";
+                if(py.checked)      choice += "Python ";
+
+                if (choice.length == 0)
+                    choice = "Then Learn Something";
+
+                let ans = "name = " + name.value + " choice = " + choice;
+                msg.innerHTML = ans;
+
+            }
+        </script>
+    </center>
+    
+</body>
+</html>
